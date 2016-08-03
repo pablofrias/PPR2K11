@@ -6,8 +6,8 @@ def init(alerta, tipo):
     alerta.tipo = tipo
 
 def crearAlerta(tipo):
-    alerta = Alerta.Alerta()
-    Alerta.init(alerta, 1)
+    alerta = Alerta()
+    init(alerta, 1)
     return alerta
 
 def write(alerta):

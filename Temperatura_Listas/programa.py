@@ -24,7 +24,7 @@ def inicio():
 
     while (op != 6):
         if op == 1:
-            generar_mediciones(100)
+            generar_mediciones(1000)
         elif op == 2:
             mostrar_cantidades()
         elif op == 3:
@@ -58,6 +58,7 @@ def procesar_mediciones():
         elif (medicion.temperatura < lim_inf):
             alerta = Alerta.crearAlerta(2)
             agregar_a_lista(medicion.lugar, alerta)
+        procesar_mediciones()
 
 # Agrega el alerta a la lista correspondiente
 def agregar_a_lista(lugar, alerta):
@@ -71,8 +72,10 @@ def agregar_a_lista(lugar, alerta):
         alertas_oeste.append(alerta)
 
 def mostrar_cantidades():
-    "A desarrollar"
-    pass
+    print("Alertas para sector Norte: ", len(alertas_norte))
+    print("Alertas para sector Sur: ", len(alertas_sur))
+    print("Alertas para sector Este: ", len(alertas_este))
+    print("Alertas para sector Oeste: ", len(alertas_oeste))
 
 def mostrar_mayor_temperatura():
     "A desarrollar"
